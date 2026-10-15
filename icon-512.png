@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generador Icono Anclas de Calma 512x512</title></head>
+<body style="background:#111;color:#fff;text-align:center;padding:40px;font-family:sans-serif;">
+  <h3>Generando icon-512.png para Anclas de Calma...</h3>
+  <canvas id="c" width="512" height="512" style="border:2px solid #0d9488;border-radius:32px;"></canvas>
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    // Fondo oscuro calmo
+    ctx.fillStyle = '#042f2e';
+    ctx.fillRect(0, 0, 512, 512);
+
+    // Marco exterior en verde esmeralda / menta
+    ctx.strokeStyle = '#14b8a6';
+    ctx.lineWidth = 14;
+    ctx.strokeRect(7, 7, 498, 498);
+
+    // Círculo concéntrico de calma (Tono Vagal)
+    const grad = ctx.createRadialGradient(256, 220, 20, 256, 220, 180);
+    grad.addColorStop(0, '#5eead4');
+    grad.addColorStop(0.5, '#0d9488');
+    grad.addColorStop(1, '#115e59');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(256, 220, 140, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Icono central: Corazón con pulso y ancla estilizada
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    // Corazón simétrico
+    ctx.moveTo(256, 290);
+    ctx.bezierCurveTo(256, 270, 180, 190, 180, 150);
+    ctx.bezierCurveTo(180, 110, 220, 100, 256, 140);
+    ctx.bezierCurveTo(292, 100, 332, 110, 332, 150);
+    ctx.bezierCurveTo(332, 190, 256, 270, 256, 290);
+    ctx.fill();
+
+    // Texto de marca Nixus
+    ctx.fillStyle = '#f8fafc';
+    ctx.font = '900 34px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('NIXUS SG-SST', 256, 420);
+
+    ctx.fillStyle = '#2dd4bf';
+    ctx.font = '700 22px sans-serif';
+    ctx.fillText('ANCLAS DE CALMA', 256, 455);
+
+    setTimeout(() => {
+      const a = document.createElement('a');
+      a.download = 'icon-512.png';
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+    }, 500);
+  </script>
+</body>
+</html>
