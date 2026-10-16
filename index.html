@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SGSST: Anclas de Calma & Resiliencia | Nixus Capital Humano</title>
+    <title>SGSST: Anclas de Calma | Kit de Bienestar Mental - Nixus</title>
 
     <!-- Configuración PWA -->
     <link rel="manifest" href="./manifest.json">
@@ -13,6 +13,7 @@
     <meta name="apple-mobile-web-app-title" content="Anclas de Calma">
     <link rel="apple-touch-icon" href="./icon-512.png">
 
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -93,21 +94,21 @@
             </div>
             <div>
                 <span class="text-[10px] font-black uppercase tracking-widest text-calm-700">NIXUS CAPITAL HUMANO • SG-SST</span>
-                <h3 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">Anclas de Calma & Resiliencia</h3>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">Anclas de Calma</h3>
                 <p class="text-xs text-slate-500 mt-1">
-                    Campaña de Prevención del Riesgo Psicosocial y Manejo del Estrés (Res. 2764/2022).
+                    Gestión del Riesgo Psicosocial, Autorregulación y Bienestar Ocupacional (Res. 2764 de 2022).
                 </p>
             </div>
 
             <form id="formOnboarding" class="space-y-3 pt-2 text-left">
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Nombre de la Empresa</label>
-                    <input type="text" id="inputEmpresaNombre" required placeholder="Ej: BAVARIA / POSTOBON / NIXUS" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-calm-500 transition">
+                    <input type="text" id="inputEmpresaNombre" required placeholder="Ej: BAVARIA / COLCAFE / NIXUS" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-calm-500 transition">
                 </div>
 
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-[10px] text-slate-500 leading-relaxed flex items-start gap-2">
                     <span class="text-xs">🔒</span>
-                    <span><strong>Ley 1581 de 2012 (Habeas Data):</strong> No recolectamos cédulas ni datos sensibles de salud mental. Se genera un ID anónimo por sesión para fines de cobertura SG-SST.</span>
+                    <span><strong>Ley 1581 de 2012 (Habeas Data):</strong> Sesión protegida y anónima. No recolectamos nombres completos, documentos de identidad ni historiales clínicos individuales.</span>
                 </div>
 
                 <button type="submit" class="w-full bg-calm-600 hover:bg-calm-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-calm-600/30 transition-all flex items-center justify-center space-x-2 text-xs sm:text-sm">
@@ -134,7 +135,7 @@
                                 Empresa
                             </span>
                         </div>
-                        <p class="text-xs text-slate-500 hidden sm:block">Herramienta Digital de Autogestión del Estrés y Ansiedad Laboral</p>
+                        <p class="text-xs text-slate-500 hidden sm:block">Herramienta de Autogestión del Estrés y Seguridad Psicológica</p>
                     </div>
                 </div>
 
@@ -152,15 +153,14 @@
                         </div>
                     </div>
 
-                    <!-- Botón para cambiar de empresa -->
                     <button onclick="cambiarEmpresa()" class="text-[11px] font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 px-2.5 py-1.5 rounded-xl border border-slate-300 transition">
                         🔄 Cambiar
                     </button>
 
-                    <!-- SOS Fast Button -->
-                    <button onclick="openSOSModal()" class="inline-flex items-center space-x-1.5 bg-rose-600 hover:bg-rose-700 active:scale-95 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-md shadow-rose-600/20 transition-all animate-pulse-slow">
-                        <i data-lucide="siren" class="w-4 h-4"></i>
-                        <span>SOS Pánico / Temblor</span>
+                    <!-- Botón de Rescate Vagal -->
+                    <button onclick="openRescueModal()" class="inline-flex items-center space-x-1.5 bg-teal-700 hover:bg-teal-800 active:scale-95 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-md shadow-teal-700/20 transition-all animate-pulse-slow">
+                        <i data-lucide="wind" class="w-4 h-4"></i>
+                        <span>Pausa Vagal de Rescate</span>
                     </button>
                 </div>
             </div>
@@ -170,24 +170,24 @@
     <!-- MAIN CONTAINER -->
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
 
-        <!-- Banner de Emergencia / Contexto Sismo y Ansiedad -->
-        <div id="earthquake-notice" class="bg-gradient-to-r from-amber-500/10 via-teal-500/10 to-blue-500/10 border border-amber-200/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative overflow-hidden">
+        <!-- Banner de Sensibilización de Riesgo Psicosocial -->
+        <div id="psychosocial-notice" class="bg-gradient-to-r from-teal-500/10 via-calm-500/10 to-blue-500/10 border border-teal-200/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative overflow-hidden">
             <div class="flex items-start space-x-3.5">
-                <div class="p-2.5 bg-amber-500/20 text-amber-700 rounded-xl mt-0.5 sm:mt-0 flex-shrink-0">
-                    <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                <div class="p-2.5 bg-teal-500/20 text-teal-800 rounded-xl mt-0.5 sm:mt-0 flex-shrink-0">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
                 </div>
                 <div>
                     <h3 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
-                        Acompañamiento Post-Evento Sísmico & Estrés Agudo
+                        Gestión Preventiva del Estrés y Sobrecarga Laboral (Res. 2764/2022)
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
-                        Si has sentido ansiedad o tensión corporal tras los temblores o por carga de fin de año, estas técnicas con respaldo neurocientífico regulan tu sistema nervioso de inmediato.
+                        El agotamiento continuo, la falta de desconexión y la presión por metas reducen la capacidad atencional y aumentan los incidentes. Esta guía aplica técnicas somáticas validadas para devolver el equilibrio a tu sistema nervioso en 3 minutos.
                     </p>
                 </div>
             </div>
             <div class="flex items-center space-x-2 self-end sm:self-center flex-shrink-0">
                 <button onclick="switchTab('checkin')" class="text-xs bg-slate-900 hover:bg-slate-800 text-white font-semibold px-4 py-2 rounded-xl transition-all shadow-sm">
-                    Iniciar Diagnóstico Rápido
+                    Evaluar mi Estado Actual
                 </button>
                 <button onclick="dismissNotice()" class="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg">
                     <i data-lucide="x" class="w-4 h-4"></i>
@@ -228,148 +228,148 @@
                     </div>
 
                     <div id="survey-question-container">
-                        <!-- Step 1 -->
+                        <!-- Step 1: Dimensión Intralaboral -->
                         <div id="survey-step-1" class="survey-step space-y-4">
                             <span class="inline-block px-3 py-1 bg-calm-100 text-calm-800 text-xs font-bold rounded-full">
-                                Pregunta 1: Estado Primario
+                                Paso 1: Dimensión de Carga Laboral
                             </span>
                             <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
-                                ¿Cuál es el motivo o la sensación principal que estás experimentando en este momento?
+                                ¿Cuál es la principal fuente de tensión que experimentas en tu jornada hoy?
                             </h2>
-                            <p class="text-sm text-slate-500">Selecciona la opción que más se ajuste a tu necesidad actual.</p>
+                            <p class="text-sm text-slate-500">Orientado a los factores intralaborales evaluados en la Batería de Riesgo Psicosocial.</p>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                                <button onclick="selectAnswer(1, 'Susto / Pánico por Temblor')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
-                                    <div class="p-2.5 bg-rose-100 text-rose-700 rounded-xl group-hover:scale-110 transition-transform">
-                                        <i data-lucide="activity-square" class="w-5 h-5"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Susto / Pánico por Temblor</h4>
-                                        <p class="text-xs text-slate-500 mt-0.5">Siento taquicardia o hipervigilancia tras el evento sísmico o alarma.</p>
-                                    </div>
-                                </button>
-
-                                <button onclick="selectAnswer(1, 'Sobrecarga o Estrés Laboral')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
+                                <button onclick="selectAnswer(1, 'Sobrecarga Cuantitativa / Tiempos Cortos')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
                                     <div class="p-2.5 bg-blue-100 text-blue-700 rounded-xl group-hover:scale-110 transition-transform">
-                                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                                        <i data-lucide="clock" class="w-5 h-5"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Sobrecarga o Estrés Laboral</h4>
-                                        <p class="text-xs text-slate-500 mt-0.5">Tengo demasiadas tareas pendientes, sensación de bloqueo o agobio.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Sobrecarga Cuantitativa y Prisa</h4>
+                                        <p class="text-xs text-slate-500 mt-0.5">Demasiadas tareas en poco tiempo, plazos ajustados o sensación de no alcanzar.</p>
                                     </div>
                                 </button>
 
-                                <button onclick="selectAnswer(1, 'Tensión Física / Fatiga')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
-                                    <div class="p-2.5 bg-amber-100 text-amber-700 rounded-xl group-hover:scale-110 transition-transform">
-                                        <i data-lucide="zap-off" class="w-5 h-5"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Tensión Física / Fatiga</h4>
-                                        <p class="text-xs text-slate-500 mt-0.5">Dolor en cuello, hombros, fatiga ocular o agarrotamiento muscular.</p>
-                                    </div>
-                                </button>
-
-                                <button onclick="selectAnswer(1, 'Falta de Enfoque y Dispersión')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
+                                <button onclick="selectAnswer(1, 'Saturación Cognitiva / Bloqueo')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
                                     <div class="p-2.5 bg-purple-100 text-purple-700 rounded-xl group-hover:scale-110 transition-transform">
-                                        <i data-lucide="target" class="w-5 h-5"></i>
+                                        <i data-lucide="brain" class="w-5 h-5"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Falta de Enfoque y Dispersión</h4>
-                                        <p class="text-xs text-slate-500 mt-0.5">Me cuesta concentrarme, procrastino o salto de una tarea a otra.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Saturación Cognitiva o Bloqueo</h4>
+                                        <p class="text-xs text-slate-500 mt-0.5">Fatiga mental, dificultad para tomar decisiones o sensación de "mente en blanco".</p>
+                                    </div>
+                                </button>
+
+                                <button onclick="selectAnswer(1, 'Tensión Física Postural')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
+                                    <div class="p-2.5 bg-amber-100 text-amber-700 rounded-xl group-hover:scale-110 transition-transform">
+                                        <i data-lucide="user-x" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-sm">Tensión Física y Muscular</h4>
+                                        <p class="text-xs text-slate-500 mt-0.5">Contracturas en cuello, hombros rígidos, mandíbula apretada o fatiga visual.</p>
+                                    </div>
+                                </button>
+
+                                <button onclick="selectAnswer(1, 'Demandas Emocionales / Relaciones')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-start space-x-3 group">
+                                    <div class="p-2.5 bg-rose-100 text-rose-700 rounded-xl group-hover:scale-110 transition-transform">
+                                        <i data-lucide="users" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-sm">Demandas Emocionales o Interacción</h4>
+                                        <p class="text-xs text-slate-500 mt-0.5">Atención a usuarios difíciles, tensión con compañeros o falta de apoyo.</p>
                                     </div>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Step 2 -->
+                        <!-- Step 2: Manifestación Fisiológica -->
                         <div id="survey-step-2" class="survey-step space-y-4 hidden">
                             <span class="inline-block px-3 py-1 bg-calm-100 text-calm-800 text-xs font-bold rounded-full">
-                                Pregunta 2: Síntoma Fisiológico
+                                Paso 2: Señal Psicosomática
                             </span>
                             <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
-                                ¿Cómo se manifiesta principalmente esta sensación en tu cuerpo?
+                                ¿Cómo reacciona tu cuerpo cuando se activa esta sobrecarga?
                             </h2>
-                            <p class="text-sm text-slate-500">Identificar la respuesta física nos ayuda a regular el nervio vago.</p>
+                            <p class="text-sm text-slate-500">Identificar el síntoma físico nos permite modular la respuesta del nervio vago.</p>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                                <button onclick="selectAnswer(2, 'Respiración superficial')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
+                                <button onclick="selectAnswer(2, 'Respiración corta y acelerada')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
                                     <i data-lucide="wind" class="w-5 h-5 text-calm-600"></i>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Respiración superficial o rápida</h4>
-                                        <p class="text-xs text-slate-500">Opresión suave en el pecho o falta de aire.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Respiración superficial o acelerada</h4>
+                                        <p class="text-xs text-slate-500">Opresión en el pecho o sensación de falta de aire.</p>
                                     </div>
                                 </button>
-                                <button onclick="selectAnswer(2, 'Pensamientos en bucle')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
-                                    <i data-lucide="brain" class="w-5 h-5 text-calm-600"></i>
+                                <button onclick="selectAnswer(2, 'Pensamientos en bucle y rumiación')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
+                                    <i data-lucide="brain-circuit" class="w-5 h-5 text-calm-600"></i>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Pensamientos en bucle o acelerados</h4>
-                                        <p class="text-xs text-slate-500">Ruido mental constante o preocupación excesiva.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Pensamientos en bucle y rumiación</h4>
+                                        <p class="text-xs text-slate-500">Ruido mental continuo y preocupación por pendientes.</p>
                                     </div>
                                 </button>
-                                <button onclick="selectAnswer(2, 'Rigidez muscular')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
-                                    <i data-lucide="user-x" class="w-5 h-5 text-calm-600"></i>
+                                <button onclick="selectAnswer(2, 'Contracción muscular en trapecios/mandíbula')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
+                                    <i data-lucide="shield" class="w-5 h-5 text-calm-600"></i>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Rigidez o mandíbula/hombros apretados</h4>
-                                        <p class="text-xs text-slate-500">Tensión acumulada en la postura.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Rigidez en trapecios o mandíbula</h4>
+                                        <p class="text-xs text-slate-500">Tensión isométrica inconsciente en el puesto de trabajo.</p>
                                     </div>
                                 </button>
-                                <button onclick="selectAnswer(2, 'Agotamiento/Mareo')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
+                                <button onclick="selectAnswer(2, 'Agotamiento vespertino y dispersión')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
                                     <i data-lucide="battery-low" class="w-5 h-5 text-calm-600"></i>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Sensación de agotamiento o mareo suave</h4>
-                                        <p class="text-xs text-slate-500">Baja energía o sobreestimulación sensorial.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Agotamiento y dispersión atencional</h4>
+                                        <p class="text-xs text-slate-500">Dificultad para mantener el foco en la pantalla o labor.</p>
                                     </div>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Step 3 -->
+                        <!-- Step 3: Ventana de Pausa -->
                         <div id="survey-step-3" class="survey-step space-y-4 hidden">
                             <span class="inline-block px-3 py-1 bg-calm-100 text-calm-800 text-xs font-bold rounded-full">
-                                Pregunta 3: Disponibilidad de Tiempo
+                                Paso 3: Ventana de Pausa Activa
                             </span>
                             <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
-                                ¿De cuánto tiempo dispones en este instante para tu pausa de regulación?
+                                ¿De cuánto tiempo dispones ahora mismo para tu pausa de autorregulación?
                             </h2>
 
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
-                                <button onclick="selectAnswer(3, '1 Minuto')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-center transition-all">
+                                <button onclick="selectAnswer(3, '1 Minuto (Intervención Rápida)')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-center transition-all">
                                     <span class="text-2xl font-black text-calm-600 block">1 MINUTO</span>
-                                    <span class="text-xs text-slate-500">Intervención Ultra-Rápida</span>
+                                    <span class="text-xs text-slate-500">Reset de Respiración Vagal</span>
                                 </button>
-                                <button onclick="selectAnswer(3, '3-5 Minutos')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-center transition-all">
+                                <button onclick="selectAnswer(3, '3-5 Minutos (Pausa de Reconexión)')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-center transition-all">
                                     <span class="text-2xl font-black text-calm-600 block">3 - 5 MINS</span>
-                                    <span class="text-xs text-slate-500">Pausa Activa de Reset</span>
+                                    <span class="text-xs text-slate-500">Descompresión Sensorial Completa</span>
                                 </button>
-                                <button onclick="selectAnswer(3, '25 Minutos')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-center transition-all">
+                                <button onclick="selectAnswer(3, '25 Minutos (Bloque Pomodoro)')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-center transition-all">
                                     <span class="text-2xl font-black text-calm-600 block">25 MINS</span>
-                                    <span class="text-xs text-slate-500">Sesión Pomodoro Focus</span>
+                                    <span class="text-xs text-slate-500">Estructura de Trabajo Concentrado</span>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Step 4 -->
+                        <!-- Step 4: Espacio de Ejecución -->
                         <div id="survey-step-4" class="survey-step space-y-4 hidden">
                             <span class="inline-block px-3 py-1 bg-calm-100 text-calm-800 text-xs font-bold rounded-full">
-                                Pregunta 4: Tu Entorno
+                                Paso 4: Contexto Físico
                             </span>
                             <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
-                                ¿En qué entorno te encuentras ahora mismo?
+                                ¿En qué espacio te encuentras en este momento?
                             </h2>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                                <button onclick="selectAnswer(4, 'Escritorio / Oficina')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
+                                <button onclick="selectAnswer(4, 'Puesto de Trabajo / Pantalla PVD')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
                                     <i data-lucide="monitor" class="w-5 h-5 text-slate-600"></i>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">En el escritorio / Oficina</h4>
-                                        <p class="text-xs text-slate-500">Puedo hacer respiración o estiramientos sentado.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Puesto de Trabajo / Frente a Pantalla</h4>
+                                        <p class="text-xs text-slate-500">Ejercicios somáticos discretos y respiración guiada.</p>
                                     </div>
                                 </button>
-                                <button onclick="selectAnswer(4, 'Punto de Encuentro')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
-                                    <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600"></i>
+                                <button onclick="selectAnswer(4, 'Zona de Descanso / Espacio Común')" class="survey-option-btn p-4 rounded-2xl border-2 border-slate-200 hover:border-calm-500 hover:bg-calm-50/50 text-left transition-all flex items-center space-x-3">
+                                    <i data-lucide="coffee" class="w-5 h-5 text-emerald-600"></i>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">Punto de Encuentro / Zona Segura</h4>
-                                        <p class="text-xs text-slate-500">Post-evacuación o espacio abierto de pie.</p>
+                                        <h4 class="font-bold text-slate-900 text-sm">Zona de Descanso o Espacio Común</h4>
+                                        <p class="text-xs text-slate-500">Pausa activa completa con movilidad y anclaje sensorial.</p>
                                     </div>
                                 </button>
                             </div>
@@ -381,14 +381,14 @@
                                 <div class="w-12 h-12 rounded-full bg-calm-600 text-white flex items-center justify-center mx-auto shadow-md">
                                     <i data-lucide="check-circle-2" class="w-6 h-6"></i>
                                 </div>
-                                <h3 class="text-xl font-extrabold text-slate-900">Recomendación Personalizada SGSST</h3>
-                                <p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Sin Diagnóstico Clínico • Orientación Psicoeducativa</p>
+                                <h3 class="text-xl font-extrabold text-slate-900">Prescripción de Autocuidado SG-SST</h3>
+                                <p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Orientación Psicoeducativa • Medicina Preventiva</p>
                                 
                                 <div id="recommendation-card" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-left mt-4 space-y-3"></div>
 
                                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
                                     <button id="start-rec-btn" class="w-full sm:w-auto bg-calm-600 hover:bg-calm-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-calm-600/30 transition-all flex items-center justify-center space-x-2">
-                                        <span>Ejecutar Técnica Recomendada</span>
+                                        <span>Iniciar Técnica Prescrita</span>
                                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                                     </button>
                                     <button onclick="resetSurvey()" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-4 py-3 rounded-xl transition-all">
@@ -408,34 +408,34 @@
                 <button onclick="selectTool('sigh')" id="tool-btn-sigh" class="tool-tab-btn active p-3 rounded-2xl border border-slate-200 bg-white hover:border-calm-500 text-center transition-all space-y-1">
                     <i data-lucide="wind" class="w-5 h-5 mx-auto text-calm-600"></i>
                     <span class="text-xs font-bold block text-slate-800">Suspiro Fisiológico</span>
-                    <span class="text-[10px] text-slate-500 block">Reset Estrés en 1m</span>
+                    <span class="text-[10px] text-slate-500 block">Reset del Nervio Vago (1m)</span>
                 </button>
                 <button onclick="selectTool('box')" id="tool-btn-box" class="tool-tab-btn p-3 rounded-2xl border border-slate-200 bg-white hover:border-calm-500 text-center transition-all space-y-1">
                     <i data-lucide="square" class="w-5 h-5 mx-auto text-blue-600"></i>
                     <span class="text-xs font-bold block text-slate-800">Respiración Cuadrada</span>
-                    <span class="text-[10px] text-slate-500 block">Navy SEAL Focus</span>
+                    <span class="text-[10px] text-slate-500 block">Enfoque Táctico 4-4-4-4</span>
                 </button>
                 <button onclick="selectTool('grounding')" id="tool-btn-grounding" class="tool-tab-btn p-3 rounded-2xl border border-slate-200 bg-white hover:border-calm-500 text-center transition-all space-y-1">
                     <i data-lucide="anchor" class="w-5 h-5 mx-auto text-amber-600"></i>
                     <span class="text-xs font-bold block text-slate-800">Grounding 5-4-3-2-1</span>
-                    <span class="text-[10px] text-slate-500 block">Anclaje Post-Sismo</span>
+                    <span class="text-[10px] text-slate-500 block">Anclaje Sensorial al Presente</span>
                 </button>
                 <button onclick="selectTool('pomodoro')" id="tool-btn-pomodoro" class="tool-tab-btn p-3 rounded-2xl border border-slate-200 bg-white hover:border-calm-500 text-center transition-all space-y-1">
                     <i data-lucide="timer" class="w-5 h-5 mx-auto text-purple-600"></i>
-                    <span class="text-xs font-bold block text-slate-800">Pomodoro Anti-Estrés</span>
-                    <span class="text-[10px] text-slate-500 block">Trabajo + Pausa</span>
+                    <span class="text-xs font-bold block text-slate-800">Pomodoro Consciente</span>
+                    <span class="text-[10px] text-slate-500 block">25m Enfoque + 5m Pausa</span>
                 </button>
             </div>
 
             <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 relative overflow-hidden min-h-[420px] flex flex-col justify-center items-center">
-                <!-- Breathing Visualizer -->
+                <!-- Visualizador de Respiración -->
                 <div id="tool-display-breathing" class="tool-view w-full max-w-md mx-auto text-center space-y-6">
                     <div>
                         <span id="breath-title-badge" class="px-3 py-1 bg-calm-100 text-calm-800 text-xs font-bold rounded-full">
-                            Suspiro Fisiológico (Stanford Neuroscience)
+                            Suspiro Fisiológico (Neurobiología de Stanford)
                         </span>
                         <h3 id="breath-title" class="text-xl font-bold text-slate-900 mt-2">Doble Inhalación Nasal + Exhalación Larga</h3>
-                        <p id="breath-desc" class="text-xs text-slate-500 mt-1">La forma más rápida para reducir la frecuencia cardíaca y la ansiedad en minutos.</p>
+                        <p id="breath-desc" class="text-xs text-slate-500 mt-1">Estimula los barorreceptores cardíacos y descarga CO₂ acumulado en menos de 60 segundos.</p>
                     </div>
 
                     <div class="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto flex items-center justify-center">
@@ -458,14 +458,14 @@
                     </div>
                 </div>
 
-                <!-- Grounding -->
+                <!-- Grounding Sensorial -->
                 <div id="tool-display-grounding" class="tool-view w-full max-w-xl mx-auto space-y-6 hidden">
                     <div class="text-center">
                         <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">
-                            Técnica de Anclaje Sensorial (Post-Pánico o Sismo)
+                            Terapia Sensorial Somática (Kit Nixus)
                         </span>
-                        <h3 class="text-xl font-bold text-slate-900 mt-2">Método 5 - 4 - 3 - 2 - 1</h3>
-                        <p class="text-xs text-slate-500 mt-1">Conecta con tus sentidos para sacar a tu cerebro del estado de amenaza o angustia.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Método de Anclaje 5 - 4 - 3 - 2 - 1</h3>
+                        <p class="text-xs text-slate-500 mt-1">Conecta con tus sentidos para interrumpir los bucles de pensamiento rumiativo y fatiga mental.</p>
                     </div>
 
                     <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
@@ -485,14 +485,14 @@
                     </div>
                 </div>
 
-                <!-- Pomodoro -->
+                <!-- Pomodoro Mindfulness -->
                 <div id="tool-display-pomodoro" class="tool-view w-full max-w-md mx-auto text-center space-y-5 hidden">
                     <div>
                         <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-full">
-                            Gestión de Carga Laboral & Enfoque
+                            Ergonomía Cognitiva & Gestión del Tiempo
                         </span>
-                        <h3 class="text-xl font-bold text-slate-900 mt-2">Temporizador Pomodoro SGSST</h3>
-                        <p class="text-xs text-slate-500 mt-1">25 minutos de trabajo concentrado + 5 minutos de micro-pausa activa obligatoria.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Temporizador de Enfoque Consciente</h3>
+                        <p class="text-xs text-slate-500 mt-1">25 minutos de labor sin interrupciones seguidos de 5 minutos de pausa activa obligatoria.</p>
                     </div>
                     <div class="relative py-4">
                         <div class="text-5xl font-black text-slate-900 tracking-tight font-mono" id="pomo-timer-display">
@@ -520,7 +520,7 @@
                     Sustento Neurocientífico & Ergonomía
                 </span>
                 <h2 class="text-2xl font-extrabold text-slate-900">¿Por qué funcionan estas técnicas?</h2>
-                <p class="text-sm text-slate-600">Fundamentos biológicos de la regulación autonómica para la Seguridad y Salud en el Trabajo.</p>
+                <p class="text-sm text-slate-600">Fundamentos biológicos de la regulación autonómica aplicados a la Seguridad y Salud en el Trabajo.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -528,25 +528,25 @@
                     <div class="w-10 h-10 rounded-xl bg-calm-100 text-calm-700 flex items-center justify-center">
                         <i data-lucide="activity" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="font-bold text-slate-900 text-base">Nervio Vago & Tono Vagal</h3>
+                    <h3 class="font-bold text-slate-900 text-base">Nervio Vago & Freno Parasimpático</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        El nervio vago es el principal componente del sistema parasimpático. Al prolongar la exhalación, estimulamos los barorreceptores, activando el freno vagal que reduce el pulso y la presión arterial.
+                        El nervio vago regula el ritmo cardíaco y gastrointestinal. Al prolongar la exhalación (relación 1:2), se activa el reflejo barorreceptor, desacelerando el pulso y reduciendo de forma biológica la respuesta adrenérgica del estrés.
                     </p>
                     <span class="inline-block text-[10px] font-bold text-calm-800 bg-calm-50 px-2 py-1 rounded">
-                        Estudios: Stanford & Harvard Medical
+                        Evidencia: Dr. Andrew Huberman (Stanford)
                     </span>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3 hover:shadow-md transition-shadow">
                     <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center">
-                        <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                        <i data-lucide="eye" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="font-bold text-slate-900 text-base">Amígdala Cerebral & Sismos</h3>
+                    <h3 class="font-bold text-slate-900 text-base">Corteza Prefrontal vs. Rumiación</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        Tras un evento telúrico o alarma, la amígdala activa el modo "Lucha o Huida". El ejercicio Grounding obliga a la corteza prefrontal a reenfocarse en el presente, desactivando la falsa alarma.
+                        Bajo estrés sostenido por plazos de entrega, la red por defecto del cerebro dispara pensamientos catastróficos. La técnica de anclaje sensorial Grounding 5-4-3-2-1 reactiva la corteza prefrontal, rompiendo el bucle de dispersión mental.
                     </p>
                     <span class="inline-block text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-1 rounded">
-                        Psicología de Emergencias SGSST
+                        Protocolo Terapia de Aceptación y Compromiso
                     </span>
                 </div>
 
@@ -554,12 +554,12 @@
                     <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
                         <i data-lucide="refresh-cw" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="font-bold text-slate-900 text-base">Ritmos Ultradianos & Trabajo</h3>
+                    <h3 class="font-bold text-slate-900 text-base">Ritmos Ultradianos & Carga Mental</h3>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                        El cerebro no puede mantener máxima atención por más de 90 minutos continuos. La técnica Pomodoro previene la fatiga cognitiva acumulada y reduce errores laborales.
+                        El cerebro humano agota su dopamina y glucosa tras 90 minutos de esfuerzo continuo. Fraccionar la jornada en bloques Pomodoro previene el síndrome de Burnout, disminuyendo los errores de procedimiento y el ausentismo.
                     </p>
                     <span class="inline-block text-[10px] font-bold text-purple-800 bg-purple-50 px-2 py-1 rounded">
-                        Ergonomía Cognitiva SGSST
+                        Ergonomía Cognitiva & Res. 2764/22
                     </span>
                 </div>
             </div>
@@ -579,8 +579,8 @@
                                 <i data-lucide="check-circle-2" class="w-5 h-5"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-slate-900">Primer Check-in Completado</h4>
-                                <p class="text-[10px] text-slate-500">Completaste tu diagnóstico inicial de ansiedad.</p>
+                                <h4 class="text-xs font-bold text-slate-900">Primer Check-in Ocupacional</h4>
+                                <p class="text-[10px] text-slate-500">Completaste tu diagnóstico inicial de carga mental.</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-2xl border border-slate-100">
@@ -588,8 +588,8 @@
                                 <i data-lucide="wind" class="w-5 h-5"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-slate-900">Maestro de la Respiración</h4>
-                                <p class="text-[10px] text-slate-500">Realizaste al menos 1 minuto de regulación vagal.</p>
+                                <h4 class="text-xs font-bold text-slate-900">Maestro del Nervio Vago</h4>
+                                <p class="text-[10px] text-slate-500">Realizaste al menos 1 minuto de regulación fisiológica.</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-2xl border border-slate-100 opacity-60">
@@ -597,8 +597,8 @@
                                 <i data-lucide="lock" class="w-4 h-4"></i>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-slate-700">Resiliente Post-Sismo</h4>
-                                <p class="text-[10px] text-slate-500">Completa 3 ejercicios de Grounding en la semana.</p>
+                                <h4 class="text-xs font-bold text-slate-700">Líder de Autocuidado</h4>
+                                <p class="text-[10px] text-slate-500">Completa 5 pausas conscientes durante la semana.</p>
                             </div>
                         </div>
                     </div>
@@ -607,8 +607,8 @@
                 <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 pb-4">
                         <div>
-                            <h3 class="text-xl font-extrabold text-slate-900">Certificado de Participación SGSST</h3>
-                            <p class="text-xs text-slate-500">Soporte digital para registro de pausas de salud mental laborales.</p>
+                            <h3 class="text-xl font-extrabold text-slate-900">Comprobante de Participación SG-SST</h3>
+                            <p class="text-xs text-slate-500">Soporte documental para auditorías de medicina preventiva (Dec. 1072/15).</p>
                         </div>
                         <button onclick="downloadCertificate()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md transition-all flex items-center space-x-2">
                             <i data-lucide="download" class="w-4 h-4"></i>
@@ -622,18 +622,18 @@
                         <div class="flex justify-between items-center border-b border-slate-700/80 pb-4">
                             <div class="flex items-center space-x-2">
                                 <i data-lucide="shield-check" class="w-6 h-6 text-calm-400"></i>
-                                <span class="font-extrabold text-sm tracking-wider">COMPROBANTE BIENESTAR SGSST</span>
+                                <span class="font-extrabold text-sm tracking-wider">COMPROBANTE BIENESTAR SG-SST</span>
                             </div>
                             <span class="text-[10px] bg-calm-500/20 text-calm-300 font-mono px-2.5 py-1 rounded-full border border-calm-500/30">
-                                VALIDO PARA REGISTRO
+                                CONSTANCIA VÁLIDA
                             </span>
                         </div>
 
                         <div class="space-y-2">
-                            <p class="text-xs text-slate-400 uppercase tracking-widest">Acreditación de Auto-Cuidado Mental:</p>
-                            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight" id="cert-user-name">Colaborador / Empleado SGSST</h2>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest">Acreditación de Pausa Psicoemocional:</p>
+                            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight" id="cert-user-name">Colaborador / Funcionario SG-SST</h2>
                             <p class="text-xs text-slate-300">
-                                Ha participado activamente en la campaña de autocuidado, autorregulación de ansiedad y prevención del estrés ocupacional.
+                                Ha participado activamente en las jornadas de intervención frente al riesgo psicosocial, pausas de autorregulación y ergonomía cognitiva.
                             </p>
                         </div>
 
@@ -654,7 +654,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                        <label for="user-name-input" class="text-xs font-bold text-slate-700 whitespace-nowrap">Nombre en el Certificado:</label>
+                        <label for="user-name-input" class="text-xs font-bold text-slate-700 whitespace-nowrap">Nombre para el Comprobante:</label>
                         <input type="text" id="user-name-input" placeholder="Ej: Maria Fernanda Gómez" oninput="updateCertName(this.value)" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-calm-500">
                     </div>
                 </div>
@@ -663,45 +663,45 @@
 
     </main>
 
-    <!-- SOS MODAL OVERLAY -->
-    <div id="sos-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-rose-100 text-center space-y-6 relative animate-float">
-            <button onclick="closeSOSModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2">
+    <!-- MODAL DE RESCATE VAGAL (REEMPLAZO DE SOS TEMBLOR) -->
+    <div id="rescue-modal" class="fixed inset-0 z-50 bg-slate-900/85 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-teal-100 text-center space-y-6 relative animate-float">
+            <button onclick="closeRescueModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
 
-            <div class="w-16 h-16 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mx-auto shadow-inner">
-                <i data-lucide="shield-alert" class="w-8 h-8"></i>
+            <div class="w-16 h-16 bg-teal-100 text-teal-700 rounded-2xl flex items-center justify-center mx-auto shadow-inner">
+                <i data-lucide="wind" class="w-8 h-8"></i>
             </div>
 
             <div class="space-y-2">
-                <h3 class="text-2xl font-black text-slate-900">Asistencia Inmediata de Calma</h3>
+                <h3 class="text-2xl font-black text-slate-900">Pausa Vagal de Rescate</h3>
                 <p class="text-xs text-slate-600">
-                    Estás a salvo ahora. Si sentiste un temblor o tienes angustia aguda, tu cuerpo reaccionó de forma natural. Vamos a regular tu cuerpo en 60 segundos.
+                    Si experimentas agobio, bloqueo mental o sobrecarga aguda, detén tus labores 60 segundos. Vamos a activar el sistema parasimpático para regular tu frecuencia cardíaca.
                 </p>
             </div>
 
             <div class="py-4">
-                <div id="sos-orb" class="w-36 h-36 rounded-full bg-gradient-to-tr from-rose-600 to-amber-500 text-white flex flex-col items-center justify-center mx-auto shadow-xl shadow-rose-500/30 transition-all duration-1000 scale-100">
-                    <span id="sos-label" class="text-sm font-extrabold uppercase">INHALA PROFUNDO</span>
-                    <span id="sos-countdown" class="text-xs opacity-90 mt-1">4s</span>
+                <div id="rescue-orb" class="w-36 h-36 rounded-full bg-gradient-to-tr from-teal-600 to-cyan-500 text-white flex flex-col items-center justify-center mx-auto shadow-xl shadow-teal-500/30 transition-all duration-1000 scale-100">
+                    <span id="rescue-label" class="text-sm font-extrabold uppercase">INHALA PROFUNDO</span>
+                    <span id="rescue-countdown" class="text-xs opacity-90 mt-1">4s</span>
                 </div>
             </div>
 
-            <div class="bg-rose-50 p-4 rounded-2xl border border-rose-200 text-left space-y-1">
-                <h4 class="text-xs font-bold text-rose-900 flex items-center gap-1">
+            <div class="bg-teal-50 p-4 rounded-2xl border border-teal-200 text-left space-y-1">
+                <h4 class="text-xs font-bold text-teal-900 flex items-center gap-1">
                     <i data-lucide="info" class="w-3.5 h-3.5"></i>
-                    Recuerda las 3 Reglas de Oro Post-Sismo:
+                    3 Pautas para Descompresión Inmediata:
                 </h4>
-                <ul class="text-[11px] text-rose-800 list-disc list-inside space-y-0.5">
-                    <li>Siente tus pies firmes sobre el suelo.</li>
-                    <li>Observa que a tu alrededor la emergencia ya pasó.</li>
-                    <li>Suelta los hombros y exhala el aire despacio por la boca.</li>
+                <ul class="text-[11px] text-teal-800 list-disc list-inside space-y-0.5">
+                    <li>Aparta tu vista de la pantalla o de la tarea por un momento.</li>
+                    <li>Suelta la mandíbula y relaja los hombros lejos de las orejas.</li>
+                    <li>Exhala todo el aire por la boca como si empañaras un vidrio.</li>
                 </ul>
             </div>
 
-            <button onclick="closeSOSModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl shadow-md transition-all text-sm">
-                Entendido, me siento más calmado/a
+            <button onclick="closeRescueModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl shadow-md transition-all text-sm">
+                Listo, he recuperado el foco
             </button>
         </div>
     </div>
@@ -709,8 +709,8 @@
     <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200 py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
-            <p>© 2026 Sistema de Gestión de la Seguridad y Salud en el Trabajo (SGSST) - Nixus Capital Humano</p>
-            <p class="text-[10px] text-slate-400">Esta herramienta digital es de uso preventivo y psicoeducativo. No reemplaza la atención psicológica ni médica profesional.</p>
+            <p>© 2026 Sistema de Gestión de la Seguridad y Salud en el Trabajo (SG-SST) - Nixus Capital Humano</p>
+            <p class="text-[10px] text-slate-400">Herramienta de intervención preventiva del riesgo psicosocial. No reemplaza la valoración médica ocupacional ni psicológica individual.</p>
         </div>
     </footer>
 
@@ -721,7 +721,7 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
-                    .then(() => console.log('Service Worker Operativo: Modo Offline Activo'))
+                    .then(() => console.log('Service Worker: Modo Offline Operativo'))
                     .catch(err => console.warn('Aviso SW:', err));
             });
         }
@@ -729,8 +729,8 @@
         // ==============================================================
         // 2. CONFIGURACIÓN DEL WEBHOOK DE GOOGLE APPS SCRIPT
         // ==============================================================
-        // PEGA AQUÍ LA URL DE TU WEB APP DE APPS SCRIPT (TERMINADA EN /exec)
-        const APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxjTcR9WDfG3wCfOAIMhrQ65FSIVy58RZDHHV7Ed1qhrIafuOnIsDkiGTvMwArpwc_W/exec";
+        // PEGA AQUÍ LA URL DE TU WEB APP EN GOOGLE APPS SCRIPT (TERMINADA EN /exec)
+        const APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx_TU_URL_AQUI/exec";
 
         const QUEUE_STORAGE_KEY = 'nixus_calma_events_queue';
 
@@ -782,7 +782,7 @@
             })
             .then(() => {
                 localStorage.removeItem(QUEUE_STORAGE_KEY);
-                console.log(`[Sincronización Calma]: ${cola.length} eventos transmitidos.`);
+                console.log(`[Sincronización Anclas de Calma]: ${cola.length} eventos transmitidos.`);
             })
             .catch(err => console.warn('[Aviso de Sincronización]:', err));
         }
@@ -871,7 +871,7 @@
             pomoTime: 25 * 60,
             pomoRunning: false,
             pomoInterval: null,
-            sosInterval: null
+            rescueInterval: null
         };
 
         const groundingData = [
@@ -880,35 +880,35 @@
                 title: "5 Cosas que puedas VER",
                 icon: "eye",
                 color: "text-blue-600",
-                desc: "Mira a tu alrededor en tu puesto o zona segura. Identifica 5 objetos específicos (ej: un reloj, una planta, tu silla, una ventana)."
+                desc: "Observa tu entorno de trabajo. Identifica 5 detalles concretos (un documento, el color de una pared, una planta, tu reloj, el borde del teclado)."
             },
             {
                 step: 2,
                 title: "4 Cosas que puedas TOCAR",
                 icon: "hand",
                 color: "text-emerald-600",
-                desc: "Siente la textura de tu ropa, la firmeza del escritorio, la temperatura de tus manos o el piso bajo tus zapatos."
+                desc: "Siente la textura de tu ropa, la firmeza del escritorio, la temperatura de tus manos o la presión de tus pies contra el piso."
             },
             {
                 step: 3,
                 title: "3 Sonidos que puedas ESCUCHAR",
                 icon: "volume-2",
                 color: "text-amber-600",
-                desc: "Presta atención al entorno: el sonido del aire acondicionado, pisadas a lo lejos o el murmullo de voces."
+                desc: "Presta atención: el zumbido de la ventilación, el tecleo cercano o el murmullo ambiental. Escúchalos sin juzgarlos."
             },
             {
                 step: 4,
                 title: "2 Olores que puedas PERCIBIR",
                 icon: "sparkles",
                 color: "text-purple-600",
-                desc: "Siente el aroma de tu café, el gel antibacterial o inhala el aire fresco."
+                desc: "Percibe el aroma del café, el gel antibacterial o toma aire fresco por la nariz notando su temperatura."
             },
             {
                 step: 5,
-                title: "1 Emoción o Pensamiento Afirmativo",
+                title: "1 Declaración Positiva de Autocontrol",
                 icon: "heart",
                 color: "text-rose-600",
-                desc: "Di en tu mente o en voz alta: 'Estoy a salvo en este instante, mi cuerpo se está autorregulando'."
+                desc: "Di en tu mente: 'Estoy en control de mi ritmo de trabajo y doy prioridad a mi salud mental en esta jornada'."
             }
         ];
 
@@ -957,7 +957,7 @@
         }
 
         function dismissNotice() {
-            const notice = document.getElementById('earthquake-notice');
+            const notice = document.getElementById('psychosocial-notice');
             if (notice) notice.style.display = 'none';
         }
 
@@ -989,22 +989,22 @@
             let desc = "";
             let targetTool = "sigh";
 
-            if (mainReason.includes('Temblor')) {
-                title = "Técnica de Choque: Suspiro Fisiológico + Grounding 5-4-3-2-1";
-                desc = "Se detectó estado de alarma por evento sísmico. Tu sistema nervioso necesita bajar adrenalina de inmediato.";
-                targetTool = "grounding";
-            } else if (mainReason.includes('Sobrecarga')) {
-                title = "Estrategia: Pomodoro Anti-Estrés + Respiración Cuadrada";
-                desc = "Para sobrecarga, estructurar bloques de 25 minutos reduce la saturación cognitiva.";
+            if (mainReason.includes('Sobrecarga Cuantitativa')) {
+                title = "Técnica Recomendada: Pomodoro Consciente (25m / 5m)";
+                desc = "Ante altas demandas de tiempo y volumen de trabajo, estructurar la tarea en bloques reduce la fatiga mental y evita la saturación cognitiva.";
                 targetTool = "pomodoro";
-            } else if (mainReason.includes('Tensión')) {
-                title = "Estrategia: Respiración Diafragmática y Decompresión";
-                desc = "Tu cuerpo acumula tensión muscular. El suspiro fisiológico afloja los trapecios y cuello.";
+            } else if (mainReason.includes('Saturación Cognitiva')) {
+                title = "Técnica Recomendada: Respiración Cuadrada (Focus Box Breathing 4-4-4-4)";
+                desc = "Restaura la atención ejecutiva en la corteza prefrontal y disipa la visión de túnel ocasionada por la sobreestimulación.";
+                targetTool = "box";
+            } else if (mainReason.includes('Tensión Física')) {
+                title = "Técnica Recomendada: Suspiro Fisiológico + Decompresión Somática";
+                desc = "Reduce el tono muscular acumulado en trapecios y cuello activando el freno vagal en menos de 60 segundos.";
                 targetTool = "sigh";
             } else {
-                title = "Estrategia: Respiración Cuadrada (Focus Box Breathing)";
-                desc = "Excelente para recuperar claridad mental y erradicar la dispersión en el escritorio.";
-                targetTool = "box";
+                title = "Técnica Recomendada: Grounding Sensorial 5-4-3-2-1";
+                desc = "Ideal para desconectar de tensiones interpersonales y anclar la mente en el presente inmediato.";
+                targetTool = "grounding";
             }
 
             recCard.innerHTML = `
@@ -1023,7 +1023,7 @@
             };
 
             addPoints(15);
-            registrarEventoEnGoogleSheet("Autodiagnóstico", "Test Completado", `Motivo: ${mainReason} | Rec: ${targetTool}`);
+            registrarEventoEnGoogleSheet("Autodiagnóstico", "Evaluación Finalizada", `Factor: ${mainReason} | Rec: ${targetTool}`);
         }
 
         function resetSurvey() {
@@ -1065,13 +1065,13 @@
             const desc = document.getElementById('breath-desc');
 
             if (toolKey === 'sigh') {
-                badge.innerText = "Suspiro Fisiológico (Stanford Neuroscience)";
+                badge.innerText = "Suspiro Fisiológico (Neurobiología de Stanford)";
                 title.innerText = "Doble Inhalación Nasal + Exhalación Larga";
-                desc.innerText = "2 inhalaciones cortas seguidas por la nariz, 1 exhalación lenta y completa por la boca.";
+                desc.innerText = "2 inhalaciones nasales continuas seguidas de 1 exhalación lenta y prolongada por la boca.";
             } else {
                 badge.innerText = "Respiración Cuadrada (Navy SEAL Box Breathing)";
                 title.innerText = "Ritmo 4-4-4-4 para Enfoque y Control";
-                desc.innerText = "Inhala en 4s, sostén 4s, exhala en 4s, mantén sin aire 4s.";
+                desc.innerText = "Inhala en 4s, retén 4s, exhala en 4s, mantén vacío 4s.";
             }
         }
 
@@ -1101,9 +1101,9 @@
 
             const boxPhases = [
                 { label: "INHALA", duration: 4, scale: 1.35, tone: 440 },
-                { label: "SOSTÉN", duration: 4, scale: 1.35, tone: 440 },
+                { label: "RETÉN", duration: 4, scale: 1.35, tone: 440 },
                 { label: "EXHALA", duration: 4, scale: 1.0, tone: 320 },
-                { label: "MANTÉN", duration: 4, scale: 1.0, tone: 300 }
+                { label: "VACÍO", duration: 4, scale: 1.0, tone: 300 }
             ];
 
             const phases = toolKey === 'sigh' ? sighPhases : boxPhases;
@@ -1140,7 +1140,7 @@
 
             runCycle();
             addPoints(10);
-            registrarEventoEnGoogleSheet("Respiración", "Inicio Ejercicio", toolKey);
+            registrarEventoEnGoogleSheet("Respiración", "Ejercicio Iniciado", toolKey);
         }
 
         function stopBreathing() {
@@ -1192,7 +1192,7 @@
                 playTone(480, 'sine', 0.1);
             } else {
                 addPoints(25);
-                alertModal("¡Excelente Anclaje!", "Completaste la técnica 5-4-3-2-1. Tu mente está anclada en el presente.");
+                alertModal("¡Excelente Anclaje!", "Completaste los 5 pasos sensoriales. Tu atención ha retornado al presente.");
                 currentState.groundingStep = 0;
                 renderGroundingStep();
                 registrarEventoEnGoogleSheet("Grounding", "Ejercicio Completado", "5 sentidos verificados");
@@ -1225,7 +1225,7 @@
                         clearInterval(currentState.pomoInterval);
                         currentState.pomoRunning = false;
                         playTone(600, 'sine', 0.5);
-                        alertModal("¡Pausa Activa Requerida!", "Completaste 25 minutos. Tómate 5 minutos de respiración.");
+                        alertModal("¡Pausa Activa Requerida!", "Completaste 25 minutos. Tómate 5 minutos para estirarte y respirar.");
                         addPoints(30);
                         registrarEventoEnGoogleSheet("Pomodoro", "Ciclo Completado", "25 min cumplidos");
                     }
@@ -1252,13 +1252,13 @@
             }
         }
 
-        function openSOSModal() {
-            document.getElementById('sos-modal').classList.remove('hidden');
+        function openRescueModal() {
+            document.getElementById('rescue-modal').classList.remove('hidden');
             let scaleUp = true;
-            const orb = document.getElementById('sos-orb');
-            const label = document.getElementById('sos-label');
+            const orb = document.getElementById('rescue-orb');
+            const label = document.getElementById('rescue-label');
 
-            currentState.sosInterval = setInterval(() => {
+            currentState.rescueInterval = setInterval(() => {
                 if (scaleUp) {
                     orb.style.transform = 'scale(1.25)';
                     label.innerText = 'EXHALA DESPACIO';
@@ -1270,12 +1270,12 @@
                 playTone(360, 'sine', 0.2);
             }, 4000);
 
-            registrarEventoEnGoogleSheet("SOS Pánico", "Apertura Modal SOS", "Activó protocolo de emergencia sísmica/pánico");
+            registrarEventoEnGoogleSheet("Rescate Vagal", "Apertura Modal", "Activó pausa vagal de rescate");
         }
 
-        function closeSOSModal() {
-            document.getElementById('sos-modal').classList.add('hidden');
-            if (currentState.sosInterval) clearInterval(currentState.sosInterval);
+        function closeRescueModal() {
+            document.getElementById('rescue-modal').classList.add('hidden');
+            if (currentState.rescueInterval) clearInterval(currentState.rescueInterval);
             addPoints(15);
         }
 
@@ -1286,7 +1286,7 @@
         }
 
         function updateCertName(name) {
-            const cleanName = name.trim() || "Colaborador SGSST";
+            const cleanName = name.trim() || "Colaborador SG-SST";
             document.getElementById('cert-user-name').innerText = cleanName;
         }
 
